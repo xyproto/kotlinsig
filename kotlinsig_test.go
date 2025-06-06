@@ -36,6 +36,13 @@ func TestIsKotlinFunc(t *testing.T) {
 		{"tailrec fun factorial(n: Int, acc: Int = 1): Int {", true},
 		{"internal fun helper() {", true},
 		{"protected fun validate(): Boolean {", true},
+		{"init {", true},
+		{"init { println(\"Initializing\") }", true},
+		{"constructor() {", true},
+		{"constructor(name: String) {", true},
+		{"constructor(name: String, age: Int) : this(name) {", true},
+		{"primary constructor(val name: String)", true},
+		{"secondary constructor() : this(\"default\") {", true},
 	}
 
 	for _, c := range cases {
